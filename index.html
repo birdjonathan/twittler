@@ -4,14 +4,43 @@
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <style type="text/css">
+      body {
+        font: 16px sans-serif;
+
+      }
+
+      h1 {
+        font: 28px sans-serif;
+        margin: 0 0 10px 0;
+        text-align: center;
+      }
+
+
       .twittler
        {
-        color: red;
+        text-color: black;
+        word-spacing: .2em;
+        background-color:azure;
+        background-color: #cae4ff;
+        text-align: left;
+        padding: 10px 0 10px 10px;
+        border-radius: 8px;
       }
+
+      #UpdateButton
+      {
+      border: #ccc solid 1px;
+      border-radius: 3px;
+      background: #DAD7D7;
+      background-size: 17px 12px, auto auto;
+
+      }
+
+
       </style>
   </head>
   <body>
-  <h1>This is my text </h1>
+  <h1>Twittler! </h1>
   <ul class="twittler">  
   </ul>
     <button id="UpdateButton"> Refresh Twittler </button>
@@ -24,12 +53,11 @@
                   location.reload();
         });
         $body.html('');
-
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' :' +
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + '       ' +
             tweet.created_at);
           $tweet.appendTo('.twittler');
           index -= 1;
