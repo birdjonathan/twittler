@@ -5,22 +5,29 @@
     <script src="data_generator.js"></script>
     <style type="text/css">
       body {
-        font: 16px sans-serif;
+        font: 14px proxima nova;
 
       }
 
       h1 {
         font: 28px sans-serif;
         margin: 0 0 10px 0;
-        text-align: center;
+        text-align: baseline;
+      }
+
+      div {
+        width: 75%;
+
+
       }
 
 
       .twittler
        {
         text-color: black;
-        word-spacing: .2em;
+        word-spacing: .1em;
         background-color:azure;
+        line-height: 1.3em;
         background-color: #cae4ff;
         text-align: left;
         padding: 10px 0 10px 10px;
@@ -41,8 +48,10 @@
   </head>
   <body>
   <h1>Twittler! </h1>
+  <div class="mainBox"> 
   <ul class="twittler">  
   </ul>
+  </div>
     <button id="UpdateButton"> Refresh Twittler </button>
     <script>
 
@@ -59,7 +68,7 @@
           var $tweet = $('<div></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message + '       ' +
             tweet.created_at);
-          $tweet.appendTo('.twittler');
+          $tweet.appendTo($twittler);
           index -= 1;
         }
 
